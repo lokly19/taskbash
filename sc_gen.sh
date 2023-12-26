@@ -1,8 +1,10 @@
-lock_file=/var/tmp/scr
-if [ -f $lock_file ]; then
+lockFile=/var/tmp/scr
+if [ -f $lockFile ]; then
     echo Job is already running\!
     exit 0
 fi
+touch $lockFile
+trap 'rm -f "$lockFile"; exit $?' INT TERM EXIT
 
 sc_all_5_errors.sh;
 sc_all_5_http.sh;
