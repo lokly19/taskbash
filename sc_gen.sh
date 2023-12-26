@@ -1,3 +1,5 @@
+#!/bin/bash
+
 lockFile=/var/tmp/scr
 if [ -f $lockFile ]; then
     echo Job is already running\!
