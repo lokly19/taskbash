@@ -1,3 +1,5 @@
+#!/bin/bash
+
 date +"%Y%m%d%H%M%S" >> datesc.txt;
 
 lastdate=$(tail -n 1 ./datesc.txt);
