@@ -1,3 +1,9 @@
+lock_file=/var/tmp/scr
+if [ -f $lock_file ]; then
+    echo Job is already running\!
+    exit 0
+fi
+
 sc_all_5_errors.sh;
 sc_all_5_http.sh;
 sc_all_5_tolkoIP.sh;
